@@ -24,7 +24,6 @@ docker cp $plugin_path $container_id:config/plugins
 docker cp $js_path $container_id:system/dashboard-ui/modules
 
 # Backup original app.js to app.js.bak
-docker exec $container_id rm system/dashboard-ui/app.js.bak
 docker exec $container_id mv system/dashboard-ui/app.js system/dashboard-ui/app.js.bak
 
 # Copy the modified app.js into the system/dashboard-ui path
@@ -41,7 +40,7 @@ read -p "Do you want to restart the container? (Enter Y or y to confirm reboot, 
 # Determine if the user input is y or y
 if [[ $choice == "Y" || $choice == "y" ]]; then
     # Restart the Docker container
-    docker restart <container_name>
+    docker restart $container_id
     echo "The container has been restarted"
 else
     echo "Please manually restart the container later to take effect"
