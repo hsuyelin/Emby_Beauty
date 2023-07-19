@@ -1,0 +1,14 @@
+/*【媒体库内】屏蔽按标题名称排序右侧导航栏*/
+.alphaPicker.alphaPicker-vertical {
+  display: none;
+}
+/*【媒体库内】即将播出栏目改为完全显示无需滑动*/
+@media not all and (min-width: 50em) {
+  .upcomingContainer .backdropCard.card-hoverable {
+    width: 50%;
+  }
+}
+.upcomingContainer .itemsContainer {
+  display: flex;
+  flex-wrap: wrap;
+}

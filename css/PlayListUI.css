@@ -1,0 +1,197 @@
+/*【节目界面】背景图片提高遮罩亮度并使背景图片模糊化*/
+@media all and (min-width: 50em) {
+  .backgroundContainer.itemBackgroundContainer.itemBackgroundContainer-preventbackdrop.withBackdrop {
+    background: linear-gradient(
+      77deg,
+      rgba(0, 0, 0, 0.7) -20%,
+      rgba(0, 0, 0, 0.6) -50%,
+      rgba(0, 0, 0, 0.3) 100%
+    ) !important;
+    opacity: 1;
+  }
+  .backdropContainer.backdropContainer-preventbackdrop {
+    transform: scale(1.05);
+    filter: blur(1.8em) saturate(1.3);
+  }
+}
+/*【节目界面】背景图片提高遮罩亮度后的简介文字阴影和折叠显示行数*/
+@media all and (min-width: 50em) {
+  .overview-text.readOnlyContent {
+    text-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.91);
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+  }
+  .layout-tv.noScrollY .overview-text.readOnlyContent {
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    line-height: 1.46em;
+  }
+}
+/*【节目界面】背景图片提高遮罩亮度后的剧集简介文字不透明度*/
+.listItem-overview.listItemBodyText,
+.layout-tv .listItem-overview.listItemBodyText {
+  color: rgba(255, 255, 255, 0.92);
+}
+/*【节目界面】全局使用圆角样式和选中状态使用圆角样式*/
+.scrollFrameY .cardImageContainer,
+.scrollFrameY .cardOverlayContainer,
+.scrollFrameY .listItemImage {
+  contain: layout;
+  border-radius: 1.05em;
+}
+/*【节目界面】艺术家和作曲家页面使用圆角头像样式*/
+.cardContent-round.defaultCardBackground {
+  border-radius: 10em;
+}
+/*【节目界面】【桌面模式】媒体选中状态添加边框样式*/
+.card-hoverable.focusable:hover .cardOverlayContainer {
+  transition: opacity 0ms ease-in-out;
+  box-shadow: 0 0 0 0.27em
+    hsl(var(--theme-primary-color-hue), var(--theme-primary-color-saturation), var(--theme-primary-color-lightness)) !important;
+}
+/*【节目界面】修复音乐媒体库界面边框异常*/
+.squareCard .cardOverlayContainer {
+  transform: scale(0.957);
+  border-radius: 0;
+}
+.bannerCard .cardOverlayContainer {
+  transform: scale(1);
+  border-radius: 0;
+}
+.detailImageContainer.detailImageContainer-main .cardOverlayContainer,
+.osdRemoteControlImageCardBox .cardOverlayContainer {
+  transform: scale(1);
+}
+.flex-direction-column.darkContentContainer {
+  --button-background-alpha: 0.4;
+}
+/*【节目界面】【电视模式】媒体选中状态添加边框样式*/
+.layout-tv .card:focus > .cardBox-focustransform .cardContent.coveredImage {
+  border: 0.3em solid;
+  color: hsl(
+    var(--theme-primary-color-hue),
+    var(--theme-primary-color-saturation),
+    var(--theme-primary-color-lightness)
+  );
+}
+/*【节目界面】【桌面模式】媒体选中状态添加边框和颜色*/
+.scrollY .card:focus .cardContent-bxsborder {
+  box-shadow: 0 0 0 0.27em
+    hsl(var(--theme-primary-color-hue), var(--theme-primary-color-saturation), var(--theme-primary-color-lightness)) !important;
+}
+/*【节目界面】【电视模式】媒体选中状态添加边框和颜色*/
+.scrollY .card:focus-visible .cardContent-bxsborder-fv {
+  box-shadow: 0 0 0 0.27em
+    hsl(var(--theme-primary-color-hue), var(--theme-primary-color-saturation), var(--theme-primary-color-lightness)) !important;
+}
+/*【节目界面】【电视模式】优化媒体库最近栏目的显示样式*/
+.layout-tv .suggestions.padded-bottom-page .sectionTitle-cards {
+  margin-top: 3em;
+}
+.secondaryText.focusPreviewOverview,
+.readOnlyContent {
+  -webkit-line-clamp: 3;
+  max-width: 90ch !important;
+}
+/*【节目界面】媒体类型标签链接自动换行样式*/
+.focusable .mediaInfoItem:last-child {
+  width: 100%;
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+  margin-left: 0.2em;
+}
+/*【节目界面】媒体库影评指数样式修复*/
+.mediaInfoItem.mediaInfoCriticRating {
+  width: max-content;
+}
+/*【节目界面】媒体类型样式调整并添加外边框*/
+.mediaInfoItem a {
+  box-shadow: rgba(255, 255, 255, 0.4) 0 0 0 2px;
+  font-size: 100%;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  margin-right: 8px;
+  padding: 2px 8px;
+  border-radius: 1em;
+}
+/*【节目界面】媒体类型添加底色背景样式*/
+@media all and (min-width: 50em) {
+  .darkContentContainer-item .mediaInfoItem a {
+    background: rgba(115, 115, 115, 0.5);
+    backdrop-filter: blur(1.5em) saturate(1.8);
+  }
+  .mediaInfoItem .emby-button-focusscale:focus {
+    background: rgba(255, 255, 255, 1);
+  }
+}
+/*【节目界面】版本、视频、音频、字幕信息自动换行和对齐样式*/
+@media all and (min-width: 80em) {
+  .noScrollY .trackSelections,
+  .selectContainer .selectSource .selectVideoContainer .selectAudioContainer .selectSubtitlesContainer {
+    width: 24em;
+  }
+  .noScrollY,
+  .layout-tv .trackSelections,
+  .selectContainer .selectSource .selectVideoContainer .selectAudioContainer .selectSubtitlesContainer {
+    width: auto;
+  }
+  .selectLabel,
+  .selectSource.detailTrackSelect,
+  .selectVideo.detailTrackSelect,
+  .selectAudio.detailTrackSelect,
+  .selectSubtitles.detailTrackSelect {
+    margin-top: 0.8em;
+  }
+}
+/*【节目界面】播放器控件按钮添加底色背景样式*/
+@media all and (min-width: 50em) {
+  .darkContentContainer-item .detailTrackSelect,
+  .darkContentContainer-item .detailButton {
+    background: rgba(115, 115, 115, 0.5);
+    backdrop-filter: blur(1.5em) saturate(1.8);
+    border-radius: 5em !important;
+  }
+  .emby-button-focusscale:focus {
+    background: var(--theme-primary-color);
+  }
+  .detailButton {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  }
+}
+/*【节目界面】爱心控件按钮使用全局主题色调*/
+.detailButton-autotext-icon.ratingbutton-icon-withrating,
+.cardOverlayButton-hover.ratingbutton-icon-withrating,
+.dataGridItemCell.ratingbutton-icon-withrating,
+.listViewUserDataButton.ratingbutton-icon-withrating {
+  color: hsl(
+    var(--theme-primary-color-hue),
+    var(--theme-primary-color-saturation),
+    var(--theme-primary-color-lightness)
+  ) !important;
+}
+/*【节目界面】数据库链接、标签、拆分版本按钮添加底色背景样式*/
+@media all and (min-width: 50em) {
+  .darkContentContainer-item .itemLinks .item-tag-button,
+  .darkContentContainer-item .itemTags .item-tag-button,
+  .darkContentContainer-item .splitVersionContainer .btnSplitVersions {
+    background: rgba(115, 115, 115, 0.3);
+    backdrop-filter: blur(1.5em) saturate(1.8) !important;
+    box-shadow: rgba(255, 255, 255, 0.4) 0 0 0 2.3px;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 0.93em;
+    margin-right: 1em;
+  }
+}
+/*【节目界面】媒体源信息和演职人员添加底色背景样式*/
+@media all and (min-width: 50em) {
+  .darkContentContainer-item .defaultCardBackground.cardPadder-portrait,
+  div.mediaStreamPadder,
+  div.mediaStreamPadder-tv {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    background: rgba(115, 115, 115, 0);
+  }
+  .darkContentContainer-item.cardOverlayContainer .defaultCardBackground {
+    backdrop-filter: blur(0.9em);
+  }
+}

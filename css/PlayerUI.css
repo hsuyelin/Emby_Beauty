@@ -1,0 +1,138 @@
+/*【播放界面】播放器使用网页端横屏风格并修复控件异常和调整控件大小*/
+@media not all and (pointer: fine) {
+  .videoOsdBottom-buttons,
+  .videoOsd-centerButtons-autolayout,
+  .videoOsd-btnPause-autolayout {
+    position: inherit !important;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    font-size: inherit !important;
+  }
+}
+/*【播放界面】播放器调整横屏竖屏时的控件按钮大小*/
+@media all and (min-width: 20em) and (max-width: 25em) {
+  .videoOsdBottom-buttons,
+  .videoosd-transportbuttons.videoOsdBottom-buttons-right {
+    font-size: 0.9em !important;
+    margin-bottom: 0.5em;
+  }
+}
+@media all and (min-width: 40em) and (max-width: 66em) {
+  .videoOsdBottom-buttons,
+  .videoosd-transportbuttons.videoOsdBottom-buttons-right {
+    font-size: 1.2em !important;
+    margin-bottom: 0.5em;
+  }
+}
+.videoOsdBottom-buttons-remotecontrol {
+  font-size: 1.5em !important;
+}
+/*【播放界面】播放器调整远程控制投屏播放控件样式*/
+@media all and (max-width: 50em) {
+  .videoOsdBottom-buttons.videoOsdBottom-buttons-remotecontrol .videoosd-transportbuttons {
+    font-size: 0.8em;
+  }
+  .videoosd-transportbuttons.videoOsdBottom-contentbuttons.videoOsd-customFont.videoOsd-customFont-remotecontrol {
+    font-size: 0.9em;
+  }
+  .noScrollY.accent-emby:not(.transparentDocument) .btnSkipIntro.raised-backdropfilter.videoOsd-customFont {
+    bottom: 4.7em;
+    font-size: 1em;
+  }
+}
+/*【播放界面】播放器顶部控件增加立体感阴影*/
+.videoOsdHeader.headerTop {
+  filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 1));
+}
+/*【播放界面】播放器顶部背景条透明度*/
+.skinHeader.semiTransparent.headroom-scrolling::before {
+  opacity: 0;
+}
+/*【播放界面】播放器底部控件增加立体感阴影*/
+.videoOsdBottom-maincontrols {
+  -webkit-filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.75));
+  -moz-filter: drop-shadow(0px 0px 0px rgba(0, 0, 0, 0.75));
+}
+/*【播放界面】播放器底部背景条透明度*/
+.videoOsdBottom.videoOsdBottom-video {
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0));
+}
+/*【播放界面】播放器底部缓冲条透明度*/
+.emby-slider-background .emby-slider-background-inner {
+  background: rgb(255 255 255 / 0%);
+}
+/*【播放界面】播放器底部章节导航栏靠左对齐*/
+.videoosd-tabsContainer .videoOsdBottom-tabs {
+  justify-content: flex-start;
+}
+/*【播放界面】播放器底部章节导航栏文字样式和颜色*/
+.videoOsdBottom-tabs .videoosd-tabsslider .secondaryText {
+  color: white;
+  font-weight: 540;
+}
+/*【播放界面】播放器底部控件增加间距以防误触*/
+@media all and (max-height: 40em) and (min-width: 30em) and (hover: none) {
+  .videoOsdBottom-buttons .md-icon {
+    margin-left: 0.23em;
+    margin-right: 0.23em;
+  }
+}
+@media not all and (pointer: fine) {
+  .videoOsd-customFont {
+    margin-bottom: 0.7em;
+  }
+}
+/*【播放界面】播放器底部章节背景提高透明度*/
+.videoosd-padded-left.videoosd-padded-right .cardContent-bg-black {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+}
+/*【播放界面】播放器底部信息栏背景提高透明度*/
+.videoosd-tabcontainers .videoosd-tabBackground {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+/*【播放界面】播放器底部信息栏简介文字颜色*/
+.videoosd-info-overview.secondaryText {
+  color: white;
+}
+/*【播放界面】播放器底部过长的标题名和剧集名截断不换行*/
+.videoOsdText .videoOsdParentTitle:not(.videoOsdParentTitle-small) {
+  max-width: 30%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.videoOsdText .videoOsdTitle:not(.secondaryText) {
+  max-width: 40%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+/*【播放界面】播放器底部标签页栏适当缩小*/
+@media not all and (min-height: 30rem) and (min-width: 60rem) {
+  .videoosd-tabcontainers {
+    font-size: 60%;
+  }
+  .videoosd-tab.videoosd-itemstab.videoosd-activetab[data-index="1"] {
+    font-size: 90%;
+  }
+  .videoosd-tab.videoosd-itemstab.videoosd-activetab[data-index="2"] {
+    font-size: 90%;
+  }
+  .videoosd-tab.videoosd-itemstab.videoosd-activetab[data-index="3"] {
+    font-size: 98%;
+  }
+  .videoosd-tab.videoosd-guidetab.videoosd-activetab[data-index="4"] {
+    font-size: 120%;
+  }
+  .videoosd-info {
+    line-height: 1.2;
+    font-size: 153%;
+  }
+  .videoosd-tab.videoosd-itemstab.videoosd-activetab[data-index="1"] .cardText.cardTextCentered,
+  .videoosd-tab.videoosd-itemstab.videoosd-activetab[data-index="2"] .cardText.cardTextCentered,
+  .videoosd-tab.videoosd-itemstab.videoosd-activetab[data-index="3"] .cardText.cardTextCentered,
+  .videoosd-tab.videoosd-guidetab.videoosd-activetab[data-index="4"] {
+    font-size: 160%;
+  }
+}
